@@ -1,0 +1,99 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #050505;
+}
+
+body {
+  @apply bg-fondo text-crema;
+  margin: 0;
+  min-width: 320px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(46, 233, 164, 0.22);
+  color: #f8f6ed;
+}
+
+@layer components {
+  .section-shell {
+    @apply relative mx-auto max-w-6xl px-5 py-28 sm:px-6 lg:py-36;
+  }
+
+  .section-heading {
+    @apply mb-12 grid gap-6 lg:grid-cols-[1fr_0.65fr] lg:items-end;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[10px] font-medium tracking-[0.22em] text-turquesa/70;
+  }
+
+  .section-title {
+    @apply mt-3 max-w-3xl text-3xl font-semibold tracking-[-0.035em] text-crema sm:text-4xl lg:text-5xl;
+  }
+
+  .section-intro {
+    @apply max-w-xl text-sm leading-6 text-crema/45 lg:justify-self-end;
+  }
+
+  .service-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-turquesa/20 hover:bg-white/[0.035] sm:p-7;
+  }
+
+  .icon-box {
+    @apply flex h-10 w-10 items-center justify-center rounded-xl border border-turquesa/15 bg-turquesa/[0.06] text-turquesa;
+  }
+
+  .tech-pill {
+    @apply rounded-md border border-white/[0.07] bg-black/20 px-2 py-1 font-mono text-[10px] text-crema/40;
+  }
+
+  .field-label {
+    @apply mb-2 block text-xs font-medium text-crema/50;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-sm text-crema outline-none transition placeholder:text-crema/20 focus:border-turquesa/40 focus:bg-white/[0.04];
+  }
+
+  .prose-dnx p {
+    @apply mb-6 max-w-2xl text-sm leading-7 text-crema/55;
+  }
+
+  .prose-dnx a {
+    @apply text-turquesa hover:underline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
